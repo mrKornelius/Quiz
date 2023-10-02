@@ -3,25 +3,36 @@
 
     static void Main()
     {
-        int poäng = 0;
+        bool continueQuizzing = true;
 
-        Console.WriteLine("Välkommen till Quizet!");
+        while (continueQuizzing)
+        {
+            int poäng = 0;
 
-        poäng += AskQuestions("Vilken är huvudstaden i Frankrike?", "paris");
-        poäng += AskQuestions("Vilken brukar kallas för den röda planeten?", "mars");
-        poäng += AskQuestions("Vilken hundras är Lassie?", "collie", 3);
-        poäng += AskQuestions("Vad heter er lärare i OOP?", "gus");
+            Console.WriteLine("Välkommen till Quizet!");
 
-        Console.WriteLine("Nu är quizet klart. Du fick " + poäng + " poäng");
+            poäng += AskQuestions("Vilken är huvudstaden i Frankrike?", "paris");
+            poäng += AskQuestions("Vilken brukar kallas för den röda planeten?", "mars");
+            poäng += AskQuestions("Vilken hundras är Lassie?", "collie", 3);
+            poäng += AskQuestions("Vad heter er lärare i OOP?", "gus");
+
+            Console.WriteLine("Nu är quizet klart. Du fick " + poäng);
+            Console.WriteLine("Vill du göra om quizet? (j/n)");
+
+            if (Console.ReadLine() == "n")
+            {
+                continueQuizzing = false;
+            }
+        }
     }
 
     static int AskQuestions(string fråga, string svaretPåFrågan, int poäng = 1)
     {
         Console.WriteLine(fråga);
 
-        string svar = Console.ReadLine();
+        string svar = Console.ReadLine().ToLower();
 
-        if (svar == svaretPåFrågan)
+        if (svar == svaretPåFrågan.ToLower())
         {
             Console.WriteLine("Rätt!");
             return poäng;
