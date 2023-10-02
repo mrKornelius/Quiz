@@ -6,11 +6,13 @@
 
         Console.WriteLine("Fråga 1: Vilken är huvudstaden i Frankrike?");
 
+        int poäng = 0;
         string svar = Console.ReadLine().ToLower();
 
         if (svar == "paris")
         {
             Console.WriteLine("Rätt!");
+            poäng++;
         }
         else
         {
@@ -24,11 +26,14 @@
         if (svar == "mars")
         {
             Console.WriteLine("Rätt svar!");
+            poäng++;
         }
         else
         {
             Console.WriteLine("Fel!");
         }
+
+        Console.WriteLine("Nu är quizet klart. Du fick " + poäng + " poäng");
     }
 }
 
