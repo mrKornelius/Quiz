@@ -3,74 +3,31 @@
     static void Main()
     {
         Console.WriteLine("Välkommen till Quizet!");
-
-        Console.WriteLine("Fråga 1: Vilken är huvudstaden i Frankrike?");
-
         int poäng = 0;
-        string svar = Console.ReadLine().ToLower();
 
-        if (svar == "paris")
-        {
-            Console.WriteLine("Rätt!");
-            poäng++;
-        }
-        else
-        {
-            Console.WriteLine("Fel!");
-        }
-
-        Console.WriteLine("Vilken brukar kallas för den röda planeten?");
-
-        svar = Console.ReadLine().ToLower();
-
-        if (svar == "mars")
-        {
-            Console.WriteLine("Rätt svar!");
-            poäng++;
-        }
-        else
-        {
-            Console.WriteLine("Fel!");
-        }
-
-        Console.WriteLine("Vilken hundras är Lassie?");
-
-        svar = Console.ReadLine().ToLower();
-
-        if (svar == "collie")
-        {
-            Console.WriteLine("Rätt svar!");
-            poäng++;
-        }
-        else
-        {
-            Console.WriteLine("Fel!");
-        }
-
-        Console.WriteLine("Skriv in en siffra som delat med 10 ska bli 5");
-        svar = Console.ReadLine();
-
-        int svarSomNummer = 0;
-
-        if (int.TryParse(svar, out svarSomNummer))
-        {
-            if (svarSomNummer / 10 == 5)
-            {
-                Console.WriteLine("Rätt!");
-                poäng++;
-            }
-            else
-            {
-                Console.WriteLine("Fel! Ditt svar blev inte 5 det blev " + svarSomNummer / 10);
-            }
-        }
-        else
-        {
-            Console.WriteLine("Fel! För du skrev inte ens en siffra...");
-        }
+        AskQuestions("Vilken är huvudstaden i Frankrike?", "paris");
+        AskQuestions("Vilken brukar kallas för den röda planeten?", "mars");
+        AskQuestions("Vilken hundras är Lassie?", "collie");
 
         Console.WriteLine("Nu är quizet klart. Du fick " + poäng + " poäng");
     }
+
+    static void AskQuestions(string fråga, string svaretPåFrågan)
+    {
+        Console.WriteLine(fråga);
+
+        string svar = Console.ReadLine();
+
+        if (svar == svaretPåFrågan)
+        {
+            Console.WriteLine("Rätt!");
+        }
+        else
+        {
+            Console.WriteLine("Fel!");
+        }
+    }
+
 }
 
 // Välkommen till Quizet!
