@@ -1,19 +1,21 @@
 ﻿class Program
 {
-    static int poäng = 0;
 
     static void Main()
     {
+        int poäng = 0;
+
         Console.WriteLine("Välkommen till Quizet!");
 
-        AskQuestions("Vilken är huvudstaden i Frankrike?", "paris");
-        AskQuestions("Vilken brukar kallas för den röda planeten?", "mars");
-        AskQuestions("Vilken hundras är Lassie?", "collie");
+        poäng += AskQuestions("Vilken är huvudstaden i Frankrike?", "paris");
+        poäng += AskQuestions("Vilken brukar kallas för den röda planeten?", "mars");
+        poäng += AskQuestions("Vilken hundras är Lassie?", "collie", 3);
+        poäng += AskQuestions("Vad heter er lärare i OOP?", "gus");
 
         Console.WriteLine("Nu är quizet klart. Du fick " + poäng + " poäng");
     }
 
-    static void AskQuestions(string fråga, string svaretPåFrågan)
+    static int AskQuestions(string fråga, string svaretPåFrågan, int poäng = 1)
     {
         Console.WriteLine(fråga);
 
@@ -22,12 +24,14 @@
         if (svar == svaretPåFrågan)
         {
             Console.WriteLine("Rätt!");
-            poäng++;
+            return poäng;
         }
         else
         {
             Console.WriteLine("Fel!");
         }
+
+        return 0;
     }
 
 }
