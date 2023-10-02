@@ -19,14 +19,25 @@
 
         while (true)
         {
+            List<Question> failedQuestions = new();
+
             int poäng = 0;
 
             foreach (Question fråga in questions)
             {
-                poäng += AskQuestions(fråga.Text, fråga.Answer, fråga.Points);
+                int pointsForQuestion = AskQuestions(fråga.Text, fråga.Answer, fråga.Points);
+                if (pointsForQuestion == 0)
+                {
+                    failedQuestions.Add(fråga);
+                }
+                else
+                {
+                    poäng += pointsForQuestion;
+                }
             }
 
-            Console.WriteLine($"Nu är quizet klart. Du fick {poäng} av max {maxPoints}");
+            Console.WriteLine($"Nu är quizet klart. Du fick {poäng} av max {maxPoints} poäng.");
+            Console.WriteLine($"Du missade {failedQuestions.Count} frågor.");
             Console.WriteLine("Vill du göra om quizet? (j/n)");
 
             if (Console.ReadLine() == "n")
