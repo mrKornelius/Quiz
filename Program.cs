@@ -3,9 +3,7 @@
 
     static void Main()
     {
-        bool continueQuizzing = true;
-
-        while (continueQuizzing)
+        while (true)
         {
             int poäng = 0;
 
@@ -21,9 +19,11 @@
 
             if (Console.ReadLine() == "n")
             {
-                continueQuizzing = false;
+                break;
             }
         }
+
+        Console.WriteLine("Tack för ditt quizzande!");
     }
 
     static int AskQuestions(string fråga, string svaretPåFrågan, int poäng = 1)
