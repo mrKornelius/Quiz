@@ -1,9 +1,10 @@
 ﻿class Program
 {
+    static int poäng = 0;
+
     static void Main()
     {
         Console.WriteLine("Välkommen till Quizet!");
-        int poäng = 0;
 
         AskQuestions("Vilken är huvudstaden i Frankrike?", "paris");
         AskQuestions("Vilken brukar kallas för den röda planeten?", "mars");
@@ -21,6 +22,7 @@
         if (svar == svaretPåFrågan)
         {
             Console.WriteLine("Rätt!");
+            poäng++;
         }
         else
         {
