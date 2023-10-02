@@ -33,6 +33,36 @@
             Console.WriteLine("Fel!");
         }
 
+        Console.WriteLine("Vilken hundras är Lassie?");
+
+        svar = Console.ReadLine().ToLower();
+
+        if (svar == "collie")
+        {
+            Console.WriteLine("Rätt svar!");
+            poäng++;
+        }
+        else
+        {
+            Console.WriteLine("Fel!");
+        }
+
+        Console.WriteLine("Skriv in en siffra som delat med 10 ska bli 5");
+        svar = Console.ReadLine();
+
+        int svarSomNummer = int.Parse(svar);
+
+        if (svarSomNummer / 10 == 5)
+        {
+            Console.WriteLine("Rätt!");
+            poäng++;
+        }
+        else
+        {
+            Console.WriteLine("Fel! Ditt svar blev inte 5 det blev " + svarSomNummer / 10);
+        }
+
+
         Console.WriteLine("Nu är quizet klart. Du fick " + poäng + " poäng");
     }
 }
