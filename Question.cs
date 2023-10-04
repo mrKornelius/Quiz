@@ -1,3 +1,4 @@
+namespace Quiz;
 class Question
 {
     public string Text { get; set; }

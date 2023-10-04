@@ -1,4 +1,5 @@
-﻿class Program
+﻿namespace Quiz;
+class Program
 {
     static void Main()
     {
