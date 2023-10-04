@@ -1,5 +1,5 @@
 namespace Quiz;
-class Question
+class Question : Entity
 {
     public string Text { get; set; }
     public string Answer { get; set; }
